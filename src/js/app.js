@@ -4,7 +4,7 @@ $(function(){
   var team = new Team('pair-switcher:team-member'),
       membersView = new MembersView($('.member-list'));
 
-  membersView.draw(team.members);
+  membersView.draw(team.members());
 
   function addMember(){
     var newMember = {
@@ -12,8 +12,17 @@ $(function(){
       isTyro: $('input[name=tyro]:checked').length == 1
     };
 
-    membersView.draw(team.add(newMember).members);
+    membersView.draw(team.add(newMember).members());
+
+    $('input[name=name]').val('');
+    $('input[name=tyro]:checked').prop('checked', false)
+  }
+
+  function removeMember() {
+    var member = membersView.parse(this.parentElement.firstChild.innerText);
+    membersView.draw(team.remove(member).members());
   }
 
   $('#addMember').click(addMember);
+  $('.member-list').on('click', '.close', removeMember);
 });

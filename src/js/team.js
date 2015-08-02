@@ -12,8 +12,22 @@ function Team(localStorageName) {
     window.localStorage.setItem(localStorageName, JSON.stringify(teamMember));
   }
 
+  function remove(member) {
+    teamMember = _.reject(teamMember, function(m) {
+      return m.name == member.name && m.isTyro == member.isTyro;
+    });
+
+    updateLocalStorage();
+    return this;
+  }
+
+  function members(){
+    return teamMember;
+  }
+
   return {
     add: add,
-    members: teamMember
+    remove: remove,
+    members: members
   }
 }
