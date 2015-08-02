@@ -38,19 +38,19 @@
         </div>
         <div class="row">
           <div class="col-md-4">
-            <h4><small>Please add member for pair switcher</small></h4>
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" name="name" value="">
-            </div>
-            <div class="form-group">
-              <label for="tyro">
-                Tyro <input type="checkbox" name="tyro" value="">
-              </label>
-            </div>
-            <input type="button" class="btn btn-primary" id="addMember" value="Add Member" />
-            <hr>
             <div class="team">
+              <h4><small>Please add member for pair switcher</small></h4>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="">
+              </div>
+              <div class="form-group">
+                <label for="tyro">
+                  Tyro <input type="checkbox" name="tyro" value="">
+                </label>
+              </div>
+              <input type="button" class="btn btn-primary" id="addMember" value="Add Member" />
+              <hr>
             </div>
           </div>
           <div class="col-md-8" style="border-left: 1px solid #eee;">
@@ -77,10 +77,9 @@
       <script src='src/js/vendor/jquery/dist/jquery.min.js'></script>
       <script src='src/js/vendor/underscore/underscore.js'></script>
       <script src='src/js/vendor/backbone/backbone-min.js'></script>
+      <script src='src/js/vendor/backbone.localStorage/backbone.localStorage-min.js'></script>
       <script src='src/js/models/member.js'></script>
-      <script src='src/js/models/pair.js'></script>
       <script src='src/js/collections/team.js'></script>
-      <script src='src/js/collections/pairs.js'></script>
       <script src='src/js/views/member-view.js'></script>
       <script src='src/js/views/team-view.js'></script>
       <script src='src/js/app.js'></script>
