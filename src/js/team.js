@@ -14,7 +14,7 @@ function Team(localStorageName) {
 
   function remove(member) {
     teamMember = _.reject(teamMember, function(m) {
-      return m.name == member.name && m.isTyro == member.isTyro;
+      return _.isEqual(member, m);
     });
 
     updateLocalStorage();

@@ -36,17 +36,17 @@ describe('Team', function(){
 
   describe('members', function(){
     it('should return all team members', function(){
-      expect(team.members).toEqual([]);
+      expect(team.members()).toEqual([]);
 
       var first = {name: 'first'};
       team.add(first);
 
-      expect(team.members).toEqual([first]);
+      expect(team.members()).toEqual([first]);
 
       var second = {name: 'second'};
       team.add(second);
 
-      expect(team.members).toEqual([first, second]);
+      expect(team.members()).toEqual([first, second]);
     });
   });
 });
